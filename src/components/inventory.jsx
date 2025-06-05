@@ -17,9 +17,13 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import { DropDownMultiSelect } from "./dropdowns.jsx";
+import WhatshotIcon from '@mui/icons-material/Whatshot';
+
 
 function Row(props) {
   const { row } = props;
+
+  const soldNumber = Math.floor(Math.random() * 21)
 
   return (
     <React.Fragment>
@@ -66,7 +70,8 @@ function Row(props) {
         {row.Availability.toLowerCase() === "in stock" || row.Availability.toLowerCase() === "in stock." ? (
           <div
           style={{
-            backgroundColor: colors.green,
+            backgroundColor: colors.green.bg,
+            color: colors.green.color,
             display: "flex",
             alignItems: "center", // para alinear verticalmente
             paddingBottom: "5px",
@@ -88,7 +93,8 @@ function Row(props) {
         ) : row.Availability.includes("Only") ? (
           <div
             style={{
-              backgroundColor: colors.orange,
+              backgroundColor: colors.orange.bg,
+              color: colors.orange.color,
               display: "flex",
               alignItems: "center", // para alinear verticalmente
               paddingBottom: "5px",
@@ -111,6 +117,7 @@ function Row(props) {
           <div
             style={{
               backgroundColor: colors.red,
+              color: colors.red.color,
               display: "flex",
               alignItems: "center", // para alinear verticalmente
               paddingBottom: "5px",
@@ -132,9 +139,33 @@ function Row(props) {
         )}
         </TableCell>
         <TableCell>
+          <div
+              style={{
+                backgroundColor: soldNumber === 0 ? colors.red.bg : soldNumber > 0 && soldNumber <= 5 ? colors.orange.bg : colors.green.bg,
+                color: soldNumber === 0 ? colors.red.color : soldNumber > 0 && soldNumber <= 5 ? colors.orange.color : colors.green.color,
+                display: "flex",
+                alignItems: "center", // para alinear verticalmente
+                paddingBottom: "5px",
+                paddingTop: "5px",
+                paddingLeft: "10px",
+                paddingRight: "10px",
+                borderRadius: "5px",
+                justifyContent: "center",
+                width: "150px",
+                textAlign: "center",
+                gap: "5px",
+              }}
+            >
+              <WhatshotIcon style={{ fontSize: "15px", marginRight: "5px" }} />
+              <div style={{ fontSize: "13px" }}>
+                {soldNumber + " items sold"}
+              </div>
+            </div>
+        </TableCell>
+        <TableCell>
           <div style={{ display: 'flex', gap: '8px' }}>
-            <EditIcon style={{ color: colors.yellow }} />
-            <DeleteIcon style={{ color: colors.red }} />
+            <EditIcon style={{ color: colors.yellow.color }} />
+            <DeleteIcon style={{ color: colors.red.color }} />
           </div>
         </TableCell>
       </TableRow>
@@ -286,6 +317,7 @@ export default function TableInventory() {
                 <TableCell style={{ fontWeight: "bold" }}>Product</TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Price</TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Availability</TableCell>
+                <TableCell style={{ fontWeight: "bold" }}>Sold</TableCell>
                 <TableCell style={{ fontWeight: "bold" }}>Actions</TableCell>
               </TableRow>
             </TableHead>

@@ -108,7 +108,8 @@ function Row(props) {
         {sale.Status === "Delivered" ? (
           <div
           style={{
-            backgroundColor: colors.green,
+            backgroundColor: colors.green.bg,
+            color: colors.green.color,
             display: "flex",
             alignItems: "center", // para alinear verticalmente
             paddingBottom: "5px",
@@ -130,7 +131,8 @@ function Row(props) {
         ) : sale.Status === "Shipped" ? (
           <div
             style={{
-              backgroundColor: colors.blue,
+              backgroundColor: colors.blue.bg,
+              color: colors.blue.color,
               display: "flex",
               alignItems: "center", // para alinear verticalmente
               paddingBottom: "5px",
@@ -152,7 +154,8 @@ function Row(props) {
         ) : sale.Status === "Pending" ? (
           <div
             style={{
-              backgroundColor: colors.orange,
+              backgroundColor: colors.orange.bg,
+              color: colors.orange.color,
               display: "flex",
               alignItems: "center", // para alinear verticalmente
               paddingBottom: "5px",
@@ -174,7 +177,8 @@ function Row(props) {
         ) : (
           <div
             style={{
-              backgroundColor: colors.red,
+              backgroundColor: colors.red.bg,
+              color: colors.red.color,
               display: "flex",
               alignItems: "center", // para alinear verticalmente
               paddingBottom: "5px",
@@ -197,14 +201,14 @@ function Row(props) {
         </TableCell>
         <TableCell>
           <div style={{ display: 'flex', gap: '8px' }}>
-            <EditIcon style={{ color: colors.yellow }} />
-            {sale.Status === "Shipped" && (<GpsFixedIcon style={{ color: colors.blue }} />)}
-            {sale.Status === "Delivered" && (<DescriptionIcon style={{ color: colors.black }} />)}
+            <EditIcon style={{ color: colors.yellow.color }} />
+            {sale.Status === "Shipped" && (<GpsFixedIcon style={{ color: colors.blue.color }} />)}
+            {sale.Status === "Delivered" && (<DescriptionIcon style={{ color: colors.grey.color }} />)}
           </div>
         </TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={11}>
+        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={15}>
           <Collapse in={open} timeout="auto" unmountOnExit>
             <Box sx={{ margin: 1 }}>
               <Table

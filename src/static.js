@@ -1,12 +1,31 @@
 export const colors = {
-    primary: '#d70b0b',
-   
-    red: "#e54b4b",
-    green: "#82e573",
-    blue: "#4ba1e5",
-    yellow: "#e3e54b",
-    orange: "#e5a64b",
-    grey: "#c1c1c1",
+  primary: '#d70b0b',
+ 
+  red: {
+    "bg": "rgba(255, 0, 0, 0.12)",
+    "color": "#ff0000"
+  },
+  green: {
+    "bg": "rgba(0, 128, 0, 0.12)",
+    "color": "#008000"
+  },
+  blue: {
+    "bg": "rgba(160, 186, 242, 0.12)",
+    "color": "#1f49b2"
+  },
+  yellow: {
+    "bg": "rgba(255, 255, 0, 0.12)",
+    "color": "rgb(194, 188, 27)"
+  },
+  orange: {
+    "bg": "rgba(255, 165, 0, 0.12)",
+    "color": "#ffa500"
+  },
+  grey: {
+    "bg": "rgba(128, 128, 128, 0.12)",
+    "color": "#4e4e4e"
+  },
+  clearBlue: "#a8d9f5",
 }
 
 
