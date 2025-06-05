@@ -28670,7 +28670,7 @@ export const sales = [
           "Quantity": 3
         },
         {
-          "Sku": "8ca8084c",
+          "Sku": "8ca7081c",
           "Site": "Amazon",
           "Name": "Product 263",
           "Brand": "Under Armour",
